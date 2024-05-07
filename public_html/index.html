@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <title>Ice Cream Prize Game</title>
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid bg-info-subtle mb-4">
+            <div class="col-sm-8 mx-auto text-center py-2">
+                <h1 class="display-4">World of Ice Cream</h1>
+                <p class="lead ">Voting on who likes ice cream....</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h3>Ice Cream Voting</h3>
+
+            <p>
+                It is time to find out how many people like <strong>Ice Cream</strong> and
+                how many do not. Please cast you vote by clicking the approriate button
+                below:
+            </p>
+
+            <h4>Vote Here:</h4>
+            <p>
+                Please click either the 'Like' or 'Hate' button to cast your vote. A respone
+                with the current results will then be presented.
+            </p>
+            <div class="d-grid gap-4 d-md-flex justify-content-md-center mb-4">
+                <button class="btn btn btn-primary" id="likeVoteBtn">
+                    I DO like Ice Cream
+                </button>
+                <button class="btn btn btn-warning" id="dilikeVoteBtn">
+                    I DON'T like Ice Cream
+                </button>
+            </div>
+            <p>
+                The buttons should issue a GET request to the server. With the <em>Do Like</em>
+                button sending it to the route <code>/votelike</code>, and the <em>Don't Like</em>
+                button sending it to the route <code>/votedislike</code>. A new page should
+                be presented after clicking that shows the total number of votes entered 
+                and the breakdown for <strong>liked</strong> / <strong>disliked</strong> votes.
+            </p>
+    </main>
+
+    <footer class="container-fluid text-center mt-4 p-2 bg-dark text-white">
+        <p>&copy; 2024 Ice Cream made chilled!</p>
+    </footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- Add the onlick event handlers to our buttons-->
+    <!-- THis is a better approach than adding a direct onclick() method -->
+    <!-- to the button itself. Although, the JS code needs to be at the end -->
+    <!-- after the DOM (and buttons) have ben created. -->
+    <script>
+        const likebtn = document.getElementById("likeVoteBtn");
+        const dislikebtn = document.getElementById("dilikeVoteBtn");
+
+        likebtn.addEventListener("click", () => {
+            document.location = '/votelike'; 
+        });
+        dislikebtn.addEventListener("click", () => {
+            document.location = '/votedislike'; 
+        });
+    </script>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
