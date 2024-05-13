@@ -2,7 +2,8 @@
 const express = require('express');
 // Additional package for logging of HTTP requests/responses 
 const morgan = require('morgan');
-const app = express(); const port = 3000;
+const app = express(); 
+const port = 3000;
 // Include the logging for all requests
 app.use(morgan('common'));
 // Tell our application to serve all the files under the `public_html` directory
